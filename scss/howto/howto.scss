@@ -1,0 +1,186 @@
+.howto {
+  background-color: $color-secondary;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  h4 {
+    color: $white;
+  }
+  p {
+    color: $white;
+  }
+}
+
+.howto-2 {
+  background-color: #9dba78;
+  z-index: 2001;
+  h4 {
+    color: $white;
+  }
+  p {
+    color: $white;
+  }
+}
+
+.howto-3 {
+  background-color: #deefc7;
+  position: sticky;
+  z-index: 2002;
+  h4 {
+    color: $black;
+  }
+  p {
+    color: $black;
+  }
+  border-bottom: 2px solid $color-secondary;
+}
+
+.use-step {
+  background-color: $white;
+  border-radius: 50%;
+  height: 4.5rem;
+  width: 4.5rem;
+  p {
+    color: $black;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: none;
+  }
+}
+
+.use-step2 {
+  background-color: $white;
+}
+
+.use-step3 {
+  background-color: $black;
+  p {
+    color: #deefc7;
+  }
+}
+
+.use-1 {
+  height: 90vh;
+}
+
+.uso-img{
+  height: 25vh;
+  top: -8%;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 23px -4px rgba(0,0,0,0.75);
+}
+
+
+
+.use-first {
+  div {
+    @include min-992 {
+      position: sticky;
+      top: 50vh;
+    }
+  }
+}
+
+@include min-992 {
+  @keyframes wave_anim {
+    0% {
+      translate: 0%;
+    }
+    100% {
+      translate: -98%;
+    }
+  }
+
+  @keyframes wave-2_anim {
+    0% {
+      translate: 98%;
+    }
+    100% {
+      translate: 0%;
+    }
+  }
+
+  @keyframes wave_anim-2 {
+    0% {
+      translate: -99%;
+    }
+    100% {
+      translate: 1%;
+    }
+  }
+
+  @keyframes wave-2_anim-2 {
+    0% {
+      translate: 1%;
+    }
+    100% {
+      translate: 99%;
+    }
+  }
+
+  @keyframes wave_anim-3 {
+    0% {
+      translate: 0%;
+    }
+    100% {
+      translate: -98%;
+    }
+  }
+
+  @keyframes wave-2_anim-3 {
+    0% {
+      translate: 98%;
+    }
+    100% {
+      translate: 2%;
+    }
+  }
+
+  .wave {
+    animation: wave_anim 20s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave_anim 40s ease-in-out infinite alternate;
+    }
+  }
+
+  .wave-2 {
+    transform: scaleX(-1) !important;
+    position: absolute;
+    translate: 98%;
+    animation: wave-2_anim 20s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave-2_anim 40s ease-in-out infinite alternate;
+    }
+  }
+
+  .wave_layer-2 {
+    animation: wave_anim-2 20s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave_anim-2 40s ease-in-out infinite alternate;
+    }
+  }
+
+  .wave-2_layer-2 {
+    animation: wave-2_anim-2 20s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave-2_anim-2 40s ease-in-out infinite alternate;
+    }
+  }
+
+  .wave_layer-3 {
+    animation: wave_anim-3 30s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave_anim-3 60s ease-in-out infinite alternate;
+    }
+  }
+
+  .wave-2_layer-3 {
+    animation: wave-2_anim-3 30s ease-in-out infinite alternate;
+    @media min-768 {
+      animation: wave-2_anim-3 60s ease-in-out infinite alternate;
+    }
+  }
+
+}

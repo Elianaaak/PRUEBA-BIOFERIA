@@ -1,0 +1,348 @@
+/* Scroll */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b6826 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4b6826;
+  border-radius: 16px;
+  border: 3px none #ffffff;
+}
+
+/* Botón Home */
+
+.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.learn-more {
+  width: 12rem;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    .circle-after {
+      width: 100%;
+    }
+    .icon.arrow::before {
+      transition: all 0.2s ease;
+      border-top: 0.125rem solid $color-secondary !important;
+      border-right: 0.125rem solid $color-secondary !important;
+    }
+    .button-text {
+      transition: all 0.2s ease;
+      color: $color-secondary;
+    }
+  }
+}
+
+.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: $color-primary;
+  @media (min-width: 768px) {
+    background: $color-secondary;
+  }
+  border-radius: 1.625rem;
+  width: 100%;
+}
+
+.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+  transform: translate(1rem, 0);
+  z-index: 2;
+}
+
+.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid $black;
+  border-right: 0.125rem solid $black;
+  @media (min-width: 768px) {
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+  }
+  transform: rotate(45deg);
+}
+
+.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: $black;
+  @media (min-width: 768px) {
+    color: #fff;
+  }
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.circle-after {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  display: block;
+  margin: 0;
+  background: $color-primary;
+  border-radius: 1.625rem;
+  width: 0;
+  height: 3rem;
+}
+
+/* Fuentes */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-secondary;
+  color: $black;
+  font-weight: 700;
+  font-size: 2.3rem;
+  @include max-420 {
+    font-size: 2.1rem;
+  }
+}
+
+p {
+  font-family: $font-secondary;
+  color: $black;
+  font-size: 1.1rem;
+  @include max-420 {
+    font-size: 1rem;
+  }
+}
+
+/* Scroll snapping */
+
+//  html {
+//   scroll-snap-type: y proximity;
+//  }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 350px !important;
+}
+
+.pop-up {
+  z-index: 9998;
+  opacity: 80%;
+}
+
+.page-loader {
+  z-index: 10000;
+  height: 100vh;
+  width: 100vw;
+  background-color: $color-primary;
+  position: fixed;
+}
+
+// tienda
+
+@keyframes loading-shop {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes charging {
+  0% {
+    width: 100%;
+  }
+  15% {
+    width: 100%;
+  }
+  40% {
+    width: 75%;
+  }
+  55% {
+    width: 75%;
+  }
+  65% {
+    width: 40%;
+  }
+  75% {
+    width: 40%;
+  }
+  95% {
+    width: 0%;
+  }
+}
+
+.shop {
+  position: fixed;
+  z-index: 11000;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.loading {
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: 12000;
+  background-color: #fff;
+  display: none;
+  animation: loading-shop 5s ease forwards;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  div {
+    display: flex;
+    overflow: hidden;
+    justify-content: end;
+  }
+  img {
+    height: 6.5rem;
+    width: auto;
+  }
+  .grayscale {
+    position: absolute;
+    z-index: 13000;
+    height: 6.5rem;
+    width: 100%;
+    backdrop-filter: grayscale(100%);
+    animation: charging 5s linear forwards;
+  }
+}
+
+// boton de cerrar
+
+.close-div {
+  display: none;
+  position: fixed;
+  left: 2em;
+  top: 2em;
+  z-index: 11500;
+}
+
+.button-close {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  transform: scale(0.9);
+  border: none;
+  background: rgba(180, 83, 107, 0.11);
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+
+.X {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: rgb(0, 0, 0);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: #000000;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.close {
+  position: absolute;
+  display: flex;
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  top: -70%;
+  left: 50%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 12px;
+  background-color: rgb(19, 22, 24);
+  color: rgb(187, 229, 236);
+  border: none;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button-close:hover {
+  background-color: rgb(211, 21, 21);
+}
+
+.button-close:active {
+  background-color: rgb(130, 0, 0);
+}
+
+.button-close:hover > .close {
+  animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
+  }
+}

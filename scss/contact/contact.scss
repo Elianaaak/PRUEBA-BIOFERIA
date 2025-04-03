@@ -1,0 +1,223 @@
+.wave-group {
+  position: relative;
+}
+
+.wave-group .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid $black;
+  background: transparent;
+  @include min-768 {
+    width: 480px;
+  }
+  @include min-1200 {
+    width: 430px;
+  }
+}
+
+.wave-first-custom {
+  margin-right: 0px;
+}
+
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: $color-secondary;
+}
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 300px;
+  @include min-768 {
+    width: 480px;
+  }
+  @include min-1200 {
+    width: 430px;
+  }
+}
+
+.wave-group .bar-asunto {
+  width: 100%;
+}
+
+.wave-group {
+  input {
+    width: 300px;
+    @include min-768 {
+      width: 480px;
+    }
+    @include min-1200 {
+      width: 430px;
+    }
+  }
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $color-secondary;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.contact-message {
+  width: 300px;
+  height: 200px;
+  @include min-768 {
+    width: 480px;
+  }
+  @include min-1200 {
+    width: 430px;
+    height: 100px;
+  }
+  border: 1px $color-secondary;
+  border-style: solid;
+  background-color: transparent;
+}
+
+.button2 {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.button2:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: $color-secondary;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid $color-secondary;
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: $color-secondary;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: $color-secondary;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.contact-info {
+  img {
+    width: 3rem;
+    height: auto;
+  }
+  .contact-ubi {
+    height: 2.5rem;
+  }
+  .contact-subtitles {
+    font-weight: bold;
+  }
+}
+
+.contact-link-p {
+  text-decoration: none;
+}
+
+.contact-socials {
+  img {
+    width: 3.5rem;
+    height: auto;
+    @include min-768 {
+      width: 4.5rem;
+    }
+  }
+  background-color: $color-secondary;
+  border-radius: 15px;
+}
+
+.contact-order2 {
+  @include max-576 {
+    border-radius: 0;
+  }
+  border-radius: 20px;
+  background-color: $color-primary;
+}

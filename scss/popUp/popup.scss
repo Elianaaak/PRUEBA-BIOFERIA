@@ -1,0 +1,55 @@
+@keyframes popUp {
+  0% {
+    bottom: -10rem;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.popup {
+  bottom: -10rem;
+  width: 100vw;
+  animation: popUp 0.85s ease 3s forwards;
+  background-color: bisque;
+  z-index: 11500;
+  img {
+    display: none;
+  }
+  .phrases {
+    display: none;
+  }
+  p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  @include min-768 {
+    bottom: 0;
+    animation: none;
+    width: 17.5rem;
+    border-radius: 20px;
+    right: 0;
+    cursor: pointer;
+    display: none;
+    img {
+      display: block;
+      height: 2rem;
+      width: auto;
+      top: 0;
+      right: 0;
+      padding-right: 5px;
+      padding-top: 5px;
+    }
+    p {
+      z-index: 11550;
+      font-size: 1rem;
+      text-align: start;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    .phrases {
+      display: none;
+    }
+  }
+}

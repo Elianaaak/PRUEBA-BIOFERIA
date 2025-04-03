@@ -1,0 +1,76 @@
+.home {
+  height: 80vh;
+  background-image: url(../img/background-home4.jpg);
+  background-size:cover;
+  background-position: center;
+  overflow-x: hidden;
+  max-width: 100vw;
+  background-position: 80% 50%;
+  @include min-450 {
+    background-image: url(../img/background-home3.jpg);
+  }
+  @include min-576 {
+    background-image: url(../img/background-home2.jpg);
+  }
+  @include min-992{
+    background-position: right center;
+  }
+  @include min-768 {
+    background-image: url(../img/background-home.jpg);
+  }
+}
+
+.main-title {
+  @include max-420 {
+    padding-right: 30px;
+  }
+  color: $color-secondary;
+  text-decoration: underline;
+  font-size: 2.5rem !important;
+  span {
+    display: block;
+  }
+  @include min-1020 {
+    font-size: 3rem !important;
+  }
+  @include min-1400 {
+    font-size: 4.5rem !important;
+  }
+  
+}
+
+.shop-container {
+  top: 85%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  @media (min-width: 576px) {
+    top: 50%;
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes change-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pre-navbar {
+  background-color: $color-secondary;
+  overflow: hidden;
+  p {
+    color: #ffffff;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 1s ease;
+    animation: change-text 0.2s linear 0.1s forwards;
+  }
+  img {
+    height: 1.3rem;
+  }
+}

@@ -1,0 +1,152 @@
+.faq-questions {
+  p {
+    border-radius: 10px;
+    transition: all 0.15s ease;
+    &:hover {
+      transition: all 0.15s ease;
+      cursor: pointer;
+      background-color: $color-secondary !important;
+      color: $white !important;
+    }
+  }
+}
+
+.faq {
+
+  h5 {
+    font-weight: lighter;
+    font-size: 2rem;
+  }
+  h3 {
+    color: $color-secondary;
+  }
+}
+
+@keyframes selection {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.faq-answers {
+  line-height: 1.75rem;
+  @include min-1200 {
+    line-height: 2.5rem;
+  }
+  .faq-answers-div {
+    transition: all 1s ease;
+    display: none;
+    opacity: 0;
+    animation: selection 0.2s linear 0.1s forwards;
+    h5 {
+      color: $color-secondary;
+      font-weight: 700;
+      @include min-992 {
+        font-size: 1.75rem;
+      }
+      @include min-1200 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+$bg: #fff;
+$text: #7288a2;
+$gray: #4d5974;
+$lightgray: #e5e5e5;
+$blue: #709646;
+
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid $lightgray;
+    button[aria-expanded="true"] {
+      border-bottom: 1px solid $blue;
+    }
+  }
+  button {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+    color: $text;
+    font-size: 1.05rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: $blue;
+      &::after {
+        cursor: pointer;
+        color: $blue;
+        border: 1px solid $blue;
+      }
+    }
+    .accordion-title {
+      padding: 1em 1.5em 1em 0;
+    }
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid;
+      border-radius: 22px;
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+    }
+  }
+  button[aria-expanded="true"] {
+    color: $blue;
+    .icon {
+      &::after {
+        width: 0;
+      }
+    }
+    + .accordion-content {
+      opacity: 1;
+      max-height: 20em;
+      transition: all 200ms linear;
+      will-change: opacity, max-height;
+    }
+  }
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+    p {
+      font-size: 0.87rem;
+      font-weight: 300;
+      margin: 2em 0;
+    }
+  }
+}

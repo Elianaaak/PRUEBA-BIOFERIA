@@ -1,0 +1,146 @@
+.nav-logo {
+  height: auto;
+  width: 8.5rem;
+}
+.navbar-nav {
+  li {
+    a {
+      font-family: $font-secondary;
+      font-size: 1.1rem;
+      &:hover {
+        color: #4b6826;
+      }
+    }
+  }
+}
+
+.nav-cart {
+  width: auto;
+  height: 2.3rem;
+  cursor: pointer;
+
+}
+
+.nav-custom {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: $color-secondary;
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+
+.navbar-toggler {
+  border: 0;
+  &:focus,
+  &:target,
+  &:active {
+    border: 0 !important;
+    box-shadow: 0 !important;
+  }
+}
+
+.navbar {
+  --bs-navbar-toggler-border-color: 0 !important;
+  --bs-navbar-toggler-border-radius: 0 !important;
+  --bs-navbar-toggler-focus-width: 0 !important;
+}
+
+
+// Tag del carrito
+
+
+
+.cart-tag {
+  cursor: pointer;
+  transform: translateY(2.3rem);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.cart-hover {
+  &:hover {
+    .cart-tag {
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
+  }
+}
+
+.square {
+  background-color: $color-secondary;
+  border-radius: 10px;
+  p {
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 15px solid $color-secondary;
+  border-bottom: 8px solid transparent;
+  transform: rotateZ(90deg);
+  margin-bottom: -3px;
+
+}

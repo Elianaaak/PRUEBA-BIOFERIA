@@ -1,0 +1,187 @@
+.cta {
+  border: none;
+  background: none;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.products-carousel {
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-secondary;
+}
+
+// -------------------------------------------------
+
+.Carousel {
+  width: 100%;
+  margin: 0px 60px;
+}
+.Carousel h2 {
+  font-size: 26px;
+  line-height: 38px;
+  padding-bottom: 24px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* images */
+
+.slick-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 304px;
+  padding: 10px 0px;
+  margin: 0px auto;
+  max-width: 90vw;
+  overflow: hidden;
+}
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+}
+.slick {
+  position: relative;
+  width: 275px;
+  padding: 0 18px;
+  float: left;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  &:hover {
+    .card-shop {
+      bottom: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+.slick h4 {
+  position: absolute;
+  z-index: 1;
+  font-size: 22px;
+  line-height: 23px;
+  color: $black;
+  padding: 15px;
+  font-weight: 600;
+}
+.slick h4 small {
+  font-size: 15px;
+  display: block;
+}
+.slick a img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.slick a img:hover {
+  opacity: 0.85;
+}
+
+/* buttons */
+
+.slick-arrow {
+  border-radius: 30px;
+  background-color: $color-primary;
+  position: absolute;
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  border: 0;
+  cursor: pointer;
+}
+.slick-arrow:focus {
+  outline: 0;
+}
+.slick-arrow svg {
+  width: 12px;
+  height: 100%;
+  color: $black;
+}
+.slick-prev {
+  left: 0px;
+}
+.slick-next {
+  right: 0px;
+}
+
+.card-shop {
+  img {
+    height: 3rem !important;
+    object-fit: contain !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  bottom: -3.3rem;
+  left: 0;
+  right: 0;
+  background-color: $color-secondary;
+  transition: all 0.3s ease;
+}
+
+.product-title {
+  position: absolute;
+  background-color: white;
+  border-radius: 0px 20px;
+}
+
+.products-subtitle {
+  text-decoration: underline;
+  text-decoration-color: $color-secondary;
+  cursor: pointer;
+}
